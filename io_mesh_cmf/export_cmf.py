@@ -48,10 +48,10 @@ def bounds(obj, local=False):
 
 def make_flags_byte(has_verts, has_normals, has_uvs, has_colors):
     flags_byte = 0
-    if has_verts: flags_byte += 1
-    if has_normals: flags_byte += 2
-    if has_uvs: flags_byte += 4
-    if has_colors: flags_byte += 8
+    if has_verts: flags_byte |= 1
+    if has_normals: flags_byte |= 2
+    if has_uvs: flags_byte |= 4
+    if has_colors: flags_byte |= 8
     return flags_byte
 
 ######################################################
